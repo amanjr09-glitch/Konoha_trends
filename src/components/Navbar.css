@@ -19,9 +19,7 @@ nav .navbar{
   justify-content: center;
   align-items: center;
   height: 80px;
- 
 }
-
 .navbar-logo {
   color: #fff;
   justify-self: start;
@@ -39,18 +37,32 @@ nav .navbar{
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 15px;
   list-style: none;
   text-align: center;
-  width: 60vw;
+  width: 80vw;
   justify-content: end;
   margin-right: 2rem;
 }
 
 .nav-item {
   height: 80px;
+  
 }
+.nav-item1{
+  margin-top: 3px;
+  
+}
+
+.szh-menu-button {
+  height: 45px;
+  padding: 20px 20px;
+  border-radius: 50%;
+  margin-top: 15px;
+  color: dimgray;
+}
+
 
 .nav-links {
   color: #fff;

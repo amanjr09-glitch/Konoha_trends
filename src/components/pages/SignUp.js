@@ -1,6 +1,6 @@
 import React from 'react'
 import './login.css'
-import {BsFacebook, BsGoogle} from "react-icons/bs";
+import {FcGoogle} from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import { signInWithGoogle } from '../firebase/firebase';
 /* import {firebase} from '../firebase/firebase'; */
@@ -20,18 +20,19 @@ function SignUp() {
   return (
         <div class="container">
         <form action="#">
-<div class="social-container">
-<a href="#" class="social" ><BsFacebook class="fa fa-facebook fa-2x"/></a>
-<a href="#" class="social" onClick={googleSignInHandler}><BsGoogle class="fab fa fa-twitter fa-2x"/></a>
-</div>
+
 <input type="text" placeholder="First Name" />
 <input type="text" placeholder="Last Name" />
 <input type="email" placeholder="Email" />
 <input type="password" placeholder="Password" />
 <input type="password" placeholder="Confirm Password" />
-<button class="register-btn" ><a href="#">Register</a></button><br></br>
+<div class=""></div>
+<button class="register-btn"><a href="#" class="register">Register</a></button><br></br>
+<div className="or">or</div>
+<button onClick={signInWithGoogle}>
+    <a href="#" class="social" > Register With
+        <FcGoogle class="fab fa fa-Google fa-2x"/></a></button><br></br>
 <a ><Link to="/log-in">Already a customer?</Link></a>
-
 </form>
 </div>
 

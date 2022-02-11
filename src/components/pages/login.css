@@ -1,23 +1,20 @@
-
-
-
-a {
+a{
 	color: #333;
 	text-decoration: none;
-
 }
-
+.container{
+	margin: 60px 0 0 0;
+}
 button {
 	border-radius: 20px;
-	border: 1px solid #d79302;
-	background-color: #d79302;
+	border: 1px solid #f0bd4e;
+	background-color: #f0bd4e;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 12px 45px;
+	padding: 8px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
 }
 
 form {
@@ -33,9 +30,10 @@ form {
 
 input {
 	background-color: #eee;
-	border: none;
+	border: 1px solid rgb(182, 182, 182);
+	border-radius: 5px;
 	padding: 12px 15px;
-	margin: 8px ;
+	margin: 8px 8px 20px 8px ;
 	width: 100%;
 }
 
@@ -49,12 +47,14 @@ input {
 	overflow: hidden;
 	max-width: 50%;
     padding-bottom: 2%;
+
 }
 
 .form-container {
 	position: absolute;
 	top: 0;
 	height: 100%;
+
 }
 
 .log-in-container {
@@ -119,21 +119,45 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+	text-decoration: none;
 }
 
-.social:hover {
-    color: #d79302;
-	transition: all 0.2s ease-out;
-}
 
+.social .fa-Google{
+margin-bottom: -5px;
+padding-left: 4px;
+}
+.social{
+	color: #fff;
+	text-decoration: none;
+}
+.or{
+	font-size: 14px;
+	padding: 10px;
+}
+.forgot{
+	padding-top: 10px;
+}
+.forgot a {
+	color: #333;
+	text-decoration: none;
+}
+.signup a{
+	color: rgb(88, 54, 211);
+	text-decoration: none;
+}
 
 @media (max-width: 960px) {
 	.container {
 			max-width: 100%;
 			
 	}
-	form {
-		padding : 0px;
+	 .container {
+		position: absolute;
+		top: 0;
+		height: 100%;
+	    margin-top:5% ;
 	}
+		
 }
   

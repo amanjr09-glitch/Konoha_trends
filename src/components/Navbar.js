@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import {CgProfile} from 'react-icons/cg';
+import { Menu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
+import '@szhsin/react-menu/dist/transitions/slide.css';
 import { authentication } from './firebase/firebase';
+
+
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -15,10 +21,13 @@ function Navbar() {
   authentication.onAuthStateChanged((user) => {
     console.log('user in auth listener',user)
     if(user){
-      return setUserSignedIn();
+      return setUserSignedIn(true);
     }
     setUserSignedIn(false);
   });
+  const logout = () =>{
+  authentication.signOut()
+}
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -45,6 +54,7 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+      
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
@@ -52,11 +62,11 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/services'
+                to='/Categories'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Services
+                Categories
               </Link>
             </li>
             <li className='nav-item'>
@@ -79,11 +89,26 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
+
+            <li className='nav-item1'>
+             { isUserSignedIn === true ?
+          <Menu menuButton={<MenuButton></MenuButton>} transition>
+          <MenuItem onClick={logout}>LogOut</MenuItem>
+          <MenuItem>
+          <a> 
+            < Link to="/Profile">Profile</Link>
+            </a>
+          </MenuItem>
+          <MenuItem>Close Window</MenuItem>
+      </Menu>
+          :null
+          }
             
+            </li>
           </ul>
           { isUserSignedIn === true ?
-          button && <Button buttonStyle='btn--outline'>SIGN UP</Button>
-          : null
+          null
+          :button && <Button buttonStyle='btn--outline'>SIGN UP</Button>
           }
           <div>
 

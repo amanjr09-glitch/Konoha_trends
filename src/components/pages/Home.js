@@ -1,17 +1,17 @@
 import React from 'react';
 import '../../App.css';
-import Cards from '../Cards';
 import Footer from '../Footer';
 import Featured from '../featured';
 import Bestdeals from '../bestdeals';
 import Carousel from '../Carousel';
+import Categories from '../Categories';
 
 
 function Home() {
   return (
     <>
       <Carousel />
-      <Cards />
+      <Categories />
       <Featured />
       <Bestdeals />
       <Footer />

@@ -1,3 +1,7 @@
+a{
+    color: #fff;
+    text-decoration: none;
+}
 .login-page {
     width: 100%;
     height: 100%;
@@ -106,50 +110,29 @@
     background-color: #EDBA60;
     color: #ffff;
 }
-
-.check-box {
-    margin: 30px 10px 30px 0;
-}
-
-span a {
-    color: #ffff;
+.register-btn a{
+    color: #fff;
     text-decoration: none;
 }
-
-span a:hover {
-    color: black;
+.register{
+    color: #fff;
+    text-decoration: none;
 }
-
-span {
-    width: 100%;
-    color: #ffff;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    bottom: 67px;
-    position: absolute;
+.check-box {
+    margin: 30px 10px 30px 0;
 }
 
 .social-links {
     margin-top: 30px;
     text-align: center;
+    text-decoration: none;
 }
+.register-btn 
 
-.social-links a {
-    position: relative;
-    color: #6b2ba5;
-    font-size: 20px;
-    margin-right: 15px;
-    margin-left: 15px;
-    background-color: #fff;
-    padding: 7px 9px;
-    border: 1px;
-    border-radius: 25px;
+.or{
+	font-size: 14px;
+	
 }
-
-.social-links a:hover {
-    color: #EDBA60;
-}
-
 #login {
     left: 50px;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import product_card from "./product_data";
 import './Product.css';
+import {Link} from 'react-router-dom';
 
 const Product = () => {
     console.log(product_card);
@@ -14,8 +15,8 @@ const Product = () => {
                 <p>{item.description}</p>
                 <p className="price">{item.price}<span>{item.currency}</span></p>
                 <div className="btn" >
-                    {/* <a href="./Catalog.js">Add to cart</a> link productPage.js */}
-                    </div>
+                  <a><Link to="/Add to cart">Add to cart</Link></a>
+                </div>
             </div>
         </div>
 
