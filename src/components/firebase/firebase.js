@@ -1,7 +1,6 @@
 import {initializeApp} from 'firebase/app';
 import { getAuth } from 'firebase/auth'
 import { signInWithPopup , GoogleAuthProvider } from 'firebase/auth';
-
 const firebaseConfig = {
   apiKey: "AIzaSyAWHbZZKsBcU9QOFPBmtEobzIl0sLkv1qo",
   authDomain: "konoha-sign-up.firebaseapp.com",
@@ -16,11 +15,11 @@ const app = initializeApp(firebaseConfig);
 
 export const authentication = getAuth(app);
 
-export const signInWithGoogle = () => {
+/* export const signInWithGoogle = () => {
   const provder = new GoogleAuthProvider();
   signInWithPopup(authentication,provder).then( (res) => {
-    console.log(res); 
+    sessionStorage.setItem('user', JSON.stringify(res));
   }).catch(err => {
     console.log(err);
   });
-}
+} */

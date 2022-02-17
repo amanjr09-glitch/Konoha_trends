@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './login.css'
 import {FcGoogle} from "react-icons/fc";
-import { Link } from 'react-router-dom';
-import { signInWithGoogle, authentication } from '../firebase/firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Button} from '../Button';
+import { Link , Route} from 'react-router-dom';
+import { authentication } from '../firebase/firebase';
+import { createUserWithEmailAndPassword , GoogleAuthProvider , signInWithPopup } from "firebase/auth";
+import { useHistory } from "react-router-dom";
 function SignUp() {
+  const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,7 +41,6 @@ function SignUp() {
     event.preventDefault();
     if(!checkConfirmPassowrd()){
 
-      alert('Password does not match')
       return false;
     }
     console.log(email,password);
@@ -48,6 +48,7 @@ function SignUp() {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
+      history.push('/');
       // ...
     })
     .catch((error) => {
@@ -55,8 +56,22 @@ function SignUp() {
       const errorMessage = error.message;
       // ..
     });
-  }
+  };
 
+  /* const googleLogin = (event) => {
+    event.preventDefault();
+    signInWithGoogle;
+  }; */
+
+  const signInWithGoogle = () => {
+    const provder = new GoogleAuthProvider();
+    signInWithPopup(authentication,provder).then( (res) => {
+      sessionStorage.setItem('user', JSON.stringify(res));
+      history.push('/');
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 
   return (
         <div className="container">
